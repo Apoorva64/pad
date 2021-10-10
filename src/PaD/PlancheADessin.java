@@ -7,6 +7,7 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.awt.Font;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Vector;
 import java.util.List;
 import java.awt.BasicStroke;
@@ -347,7 +348,7 @@ public class PlancheADessin
     protected void draw() {
         clearOff(DEFAULT_CLEAR_COLOR);
         // trier selon la profondeur
-        this.voad.sort((x, y) -> x.compareTo(y));
+        this.voad.sort(Comparator.naturalOrder());
         // dessiner chacun des Dessinable de la liste voad
         for (Dessinable d : this.voad)
             d.dessiner(this);
@@ -454,5 +455,25 @@ public class PlancheADessin
      */
     public String version() {
         return SERIAL_VERSION;
+    }
+
+    @Override
+    public String toString() {
+        return "PlancheADessin{" +
+                "voad=" + voad +
+                ", font=" + font +
+                ", width=" + width +
+                ", height=" + height +
+                ", penColor=" + penColor +
+                ", penRadius=" + penRadius +
+                ", offscreenImage=" + offscreenImage +
+                ", onscreenImage=" + onscreenImage +
+                ", offscreen=" + offscreen +
+                ", onscreen=" + onscreen +
+                ", frame=" + frame +
+                ", sélection=" + sélection +
+                ", offX=" + offX +
+                ", offY=" + offY +
+                '}';
     }
 }

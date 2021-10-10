@@ -125,9 +125,11 @@ public class Rectangle extends Dessinable {
 	s.setFrame(x, y, s.getWidth(), s.getHeight());
     }
 
-    @Override
-    public String toString() {
-	return "Rectangle";
-    }
 
+    @Override
+    public int compareTo(Dessinable o) {
+        //TODO: make compareTo
+        return 0;
+
+    }
 }

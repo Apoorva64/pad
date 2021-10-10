@@ -132,10 +132,11 @@ public class Polygone extends Dessinable {
         s.closePath();
     }
 
-    @Override
-    public String toString() {
-	return "Polygône";
-    }
 
+    @Override
+    public int compareTo(Dessinable o) {
+        //TODO: make compareTo
+        return 0;
+    }
 }
 

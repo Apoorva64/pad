@@ -135,9 +135,10 @@ public class Ligne extends Dessinable {
     @Override
     public double getY() {return this.s.getY1(); }
 
-    @Override
-    public String toString() {
-	return "Ligne";
-    }
 
+    @Override
+    public int compareTo(Dessinable o) {
+        //TODO: make compareTo
+        return 0;
+    }
 }

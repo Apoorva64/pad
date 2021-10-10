@@ -140,7 +140,19 @@ public class Texte extends Dessinable {
 
     @Override
     public String toString() {
-	return "Texte";
+        return "Texte{" +
+                "x=" + x +
+                ", y=" + y +
+                ", l=" + l +
+                ", h=" + h +
+                ", f=" + f +
+                ", t='" + t + '\'' +
+                '}';
     }
 
+    @Override
+    public int compareTo(Dessinable o) {
+        // TODO: make compareTo
+        return 0;
+    }
 }

@@ -64,10 +64,7 @@ public class Cercle extends Ellipse {
 	this(0, 0, l, PlancheADessin.DEFAULT_PEN_COLOR);
     }
 
-    @Override
-    public String toString() {
-	return "Cercle";
-    }
+
 
 }
 

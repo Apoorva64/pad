@@ -78,8 +78,5 @@ public class Carré extends Rectangle {
 	super(l, l);
     }
 
-    @Override
-    public String toString() {
-	return "Carré";
-    }
+
 }

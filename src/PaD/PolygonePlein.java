@@ -82,9 +82,6 @@ public class PolygonePlein extends Polygone {
 	pad.offscreen.fill(this.s);
     }
 
-    @Override
-    public String toString() {
-	return "Polygône Plein";
-    }
+
 
 }

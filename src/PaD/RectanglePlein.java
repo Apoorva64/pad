@@ -73,7 +73,7 @@ public class RectanglePlein extends Rectangle {
     /**
      * Rôle : dessine le rectangle plein courant dans la planche à dessin pad
      *
-     * @param  <em>pad</em> la planche à dessin
+     * @param pad la planche à dessin
      */
     @Override 
     protected void dessiner(PlancheADessin pad) {
@@ -81,9 +81,5 @@ public class RectanglePlein extends Rectangle {
 	pad.offscreen.fill(s);
     }
 
-    @Override
-    public String toString() {
-	return "Rectangle Plein";
-    }
 
 }

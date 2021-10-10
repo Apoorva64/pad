@@ -12,9 +12,9 @@ import java.net.MalformedURLException;
  *
  * @author Vincent Granet (vg@unice.fr)
  * @version 1.0.12
- *
- *          Creation @date: 24-Jul-2017 11:22 Last file update: 30-Sep-2019
- *          17:45
+ * <p>
+ * Creation @date: 24-Jul-2017 11:22 Last file update: 30-Sep-2019
+ * 17:45
  */
 public class Image extends Dessinable {
     protected double x; // abscisse de l'image
@@ -31,13 +31,15 @@ public class Image extends Dessinable {
         if (f == null)
             throw new IllegalArgumentException();
         ImageIcon icon = new ImageIcon(f);
+
         // try to read from URL
         if ((icon == null) || (icon.getImageLoadStatus() != MediaTracker.COMPLETE)) {
             try {
                 URL url = new URL(f);
                 icon = new ImageIcon(url);
             } catch (MalformedURLException e) {
-                /* not a url */ }
+                /* not a url */
+            }
         }
         // in case file is inside a .jar (classpath relative to PlancheADessin)
         if ((icon == null) || (icon.getImageLoadStatus() != MediaTracker.COMPLETE)) {
@@ -58,13 +60,11 @@ public class Image extends Dessinable {
     /**
      * Rôle : crée une Image positionnable au point d'origine <em>(x,y)</em>
      * contenue dans le fichier <em>f</em> selon l'orientation de <em>d</em> degrés
-     * 
      *
      * @param x abscisse du point d'origine de l'image
      * @param y ordonnée du point d'origine de l'image
      * @param f le fichier contenant l'image
      * @param d le nombre de degrés d'orientation
-     *
      */
     public Image(double x, double y, String f, double d) {
         super(null);
@@ -86,7 +86,6 @@ public class Image extends Dessinable {
      * @param x abscisse du point d'origine de l'image
      * @param y ordonnée du point d'origine de l'image
      * @param f le fichier contenant l'image
-     *
      */
     public Image(double x, double y, String f) {
         this(x, y, f, 0.0);
@@ -98,7 +97,6 @@ public class Image extends Dessinable {
      *
      * @param f le fichier contenant l'image
      * @param d le nombre de degrés d'orientation
-     *
      */
     public Image(String f, double d) {
         this(0, 0, f, d);
@@ -109,7 +107,6 @@ public class Image extends Dessinable {
      * contenue dans le fichier <em>f</em>
      *
      * @param f le fichier contenant l'image
-     *
      */
     public Image(String f) {
         this(0, 0, f, 0.0);
@@ -183,6 +180,63 @@ public class Image extends Dessinable {
 
     @Override
     public String toString() {
-        return "Image";
+        return "Image{" +
+                "x=" + x +
+                ", y=" + y +
+                ", l=" + l +
+                ", h=" + h +
+                ", d=" + d +
+                ", fileName='" + fileName + '\'' +
+                ", i=" + i +
+                '}';
+    }
+
+    /**
+     * Compares this object with the specified object for order.  Returns a
+     * negative integer, zero, or a positive integer as this object is less
+     * than, equal to, or greater than the specified object.
+     *
+     * <p>The implementor must ensure
+     * {@code sgn(x.compareTo(y)) == -sgn(y.compareTo(x))}
+     * for all {@code x} and {@code y}.  (This
+     * implies that {@code x.compareTo(y)} must throw an exception iff
+     * {@code y.compareTo(x)} throws an exception.)
+     *
+     * <p>The implementor must also ensure that the relation is transitive:
+     * {@code (x.compareTo(y) > 0 && y.compareTo(z) > 0)} implies
+     * {@code x.compareTo(z) > 0}.
+     *
+     * <p>Finally, the implementor must ensure that {@code x.compareTo(y)==0}
+     * implies that {@code sgn(x.compareTo(z)) == sgn(y.compareTo(z))}, for
+     * all {@code z}.
+     *
+     * <p>It is strongly recommended, but <i>not</i> strictly required that
+     * {@code (x.compareTo(y)==0) == (x.equals(y))}.  Generally speaking, any
+     * class that implements the {@code Comparable} interface and violates
+     * this condition should clearly indicate this fact.  The recommended
+     * language is "Note: this class has a natural ordering that is
+     * inconsistent with equals."
+     *
+     * <p>In the foregoing description, the notation
+     * {@code sgn(}<i>expression</i>{@code )} designates the mathematical
+     * <i>signum</i> function, which is defined to return one of {@code -1},
+     * {@code 0}, or {@code 1} according to whether the value of
+     * <i>expression</i> is negative, zero, or positive, respectively.
+     *
+     * @param o the object to be compared.
+     * @return a negative integer, zero, or a positive integer as this object
+     * is less than, equal to, or greater than the specified object.
+     * @throws NullPointerException if the specified object is null
+     * @throws ClassCastException   if the specified object's type prevents it
+     *                              from being compared to this object.
+     */
+    @Override
+    public int compareTo(Dessinable o) {
+        // TODO: make the compareTO
+        return 0;
+    }
+
+    public void rotateImage(double degrees) {
+        //TODO: make rotation
     }
 }

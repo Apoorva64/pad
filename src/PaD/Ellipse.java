@@ -140,12 +140,9 @@ public class Ellipse extends Dessinable {
     }
 
     @Override
-    public String toString() {
-	return "Ellipse";
-    }
-
-    @Override
     public int compareTo(Dessinable o) {
+
+        //TODO: make compareTo
         return 0;
     }
 }

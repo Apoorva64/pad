@@ -49,9 +49,6 @@ public class CarréPlein extends RectanglePlein {
 	super(l, l);
     }
 
-    @Override
-    public String toString() {
-	return "Carré Plein";
-    }
+
 
 }
